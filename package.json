@@ -1,0 +1,13 @@
+{
+  "name": "netlink-root",
+  "private": true,
+  "workspaces": [
+    "netlink-frontend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm run dev --workspace=netlink-frontend",
+    "build:frontend": "npm run build --workspace=netlink-frontend",
+    "dev:backend": "python -m uvicorn app.main:app --app-dir netlink-backend --reload --port 5000",
+    "install:all": "npm install"
+  }
+}

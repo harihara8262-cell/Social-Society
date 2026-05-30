@@ -1,0 +1,29 @@
+# Dependency directories
+node_modules/
+netlink-frontend/node_modules/
+
+# Local databases
+*.db
+*.db-journal
+
+# Environment variables
+.env
+netlink-backend/.env
+
+# Build outputs
+dist/
+netlink-frontend/dist/
+
+# User uploads
+uploads/
+
+# Python caching & build
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Logs
+*.log
+.system_generated/
