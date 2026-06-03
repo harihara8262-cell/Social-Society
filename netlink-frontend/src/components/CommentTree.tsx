@@ -155,7 +155,7 @@ export const CommentTree: React.FC<CommentTreeProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <img
-                src={comment.author.avatar_url ? `http://localhost:5000${comment.author.avatar_url}` : `https://api.dicebear.com/7.x/bottts/svg?seed=${comment.author.username}`}
+                src={comment.author.avatar_url ? comment.author.avatar_url : `https://api.dicebear.com/7.x/bottts/svg?seed=${comment.author.username}`}
                 alt={comment.author.username}
                 style={{ width: '24px', height: '24px', borderRadius: '50%', objectFit: 'cover' }}
               />

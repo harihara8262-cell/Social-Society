@@ -121,7 +121,7 @@ const AppContent: React.FC = () => {
                     onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                   >
                     <img
-                      src={usr.avatar_url ? `http://localhost:5000${usr.avatar_url}` : `https://api.dicebear.com/7.x/bottts/svg?seed=${usr.username}`}
+                      src={usr.avatar_url ? usr.avatar_url : `https://api.dicebear.com/7.x/bottts/svg?seed=${usr.username}`}
                       alt={usr.username}
                       style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover' }}
                     />
@@ -239,7 +239,7 @@ const AppContent: React.FC = () => {
             <GlassCard style={{ padding: '16px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '14px' }}>
                 <img
-                  src={user.avatar_url ? `http://localhost:5000${user.avatar_url}` : `https://api.dicebear.com/7.x/bottts/svg?seed=${user.username}`}
+                  src={user.avatar_url ? user.avatar_url : `https://api.dicebear.com/7.x/bottts/svg?seed=${user.username}`}
                   alt={user.username}
                   style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }}
                 />

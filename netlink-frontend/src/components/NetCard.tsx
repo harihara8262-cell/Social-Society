@@ -158,7 +158,7 @@ export const NetCard: React.FC<NetCardProps> = ({
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <img
-            src={post.author.avatar_url ? `http://localhost:5000${post.author.avatar_url}` : `https://api.dicebear.com/7.x/bottts/svg?seed=${post.author.username}`}
+            src={post.author.avatar_url ? post.author.avatar_url : `https://api.dicebear.com/7.x/bottts/svg?seed=${post.author.username}`}
             alt={post.author.username}
             onClick={() => onUserClick?.(post.author.username)}
             style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', cursor: 'pointer', border: '1px solid rgba(255, 255, 255, 0.1)' }}
@@ -221,14 +221,14 @@ export const NetCard: React.FC<NetCardProps> = ({
 
           {post.media_type === 'video' ? (
             <video
-              src={`http://localhost:5000${post.media_url}`}
+              src={post.media_url}
               controls
               onLoadedData={() => setMediaLoading(false)}
               style={{ width: '100%', maxHeight: '400px', objectFit: 'contain', display: mediaLoading ? 'none' : 'block' }}
             />
           ) : (
             <img
-              src={`http://localhost:5000${post.media_url}`}
+              src={post.media_url}
               alt="Uploaded attachment"
               onLoad={() => setMediaLoading(false)}
               style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', display: mediaLoading ? 'none' : 'block' }}

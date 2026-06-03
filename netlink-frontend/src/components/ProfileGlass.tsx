@@ -134,7 +134,7 @@ export const ProfileGlass: React.FC<ProfileGlassProps> = ({
     height: '160px',
     width: '100%',
     backgroundImage: profile.cover_url 
-      ? `url(http://localhost:5000${profile.cover_url})`
+      ? `url(${profile.cover_url})`
       : 'linear-gradient(135deg, #1e1b4b 0%, #311042 50%, #0f172a 100%)',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -169,7 +169,7 @@ export const ProfileGlass: React.FC<ProfileGlassProps> = ({
         <div style={{ padding: '0 24px 24px 24px', position: 'relative' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: '-45px', marginBottom: '16px' }}>
             <img
-              src={profile.avatar_url ? `http://localhost:5000${profile.avatar_url}` : `https://api.dicebear.com/7.x/bottts/svg?seed=${profile.username}`}
+              src={profile.avatar_url ? profile.avatar_url : `https://api.dicebear.com/7.x/bottts/svg?seed=${profile.username}`}
               alt={profile.username}
               style={{
                 width: '90px',

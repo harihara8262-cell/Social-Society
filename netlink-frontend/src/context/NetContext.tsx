@@ -166,7 +166,8 @@ export const NetProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     fetchNotifications();
 
     // Setup socket connection
-    const socketUrl = `ws://localhost:5000/ws`;
+    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    const socketUrl = `${protocol}//${window.location.host}/ws`;
     const socket = new WebSocket(socketUrl);
 
     socket.onopen = () => {

@@ -149,7 +149,7 @@ export const NotificationPanel: React.FC = () => {
               }}
             >
               <img
-                src={notif.sender.avatar_url ? `http://localhost:5000${notif.sender.avatar_url}` : `https://api.dicebear.com/7.x/bottts/svg?seed=${notif.sender.username}`}
+                src={notif.sender.avatar_url ? notif.sender.avatar_url : `https://api.dicebear.com/7.x/bottts/svg?seed=${notif.sender.username}`}
                 alt={notif.sender.username}
                 style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }}
               />

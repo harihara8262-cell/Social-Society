@@ -123,7 +123,7 @@ export const LinkFeed: React.FC<LinkFeedProps> = ({
           <form onSubmit={handleCreatePost}>
             <div style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
               <img
-                src={user.avatar_url ? `http://localhost:5000${user.avatar_url}` : `https://api.dicebear.com/7.x/bottts/svg?seed=${user.username}`}
+                src={user.avatar_url ? user.avatar_url : `https://api.dicebear.com/7.x/bottts/svg?seed=${user.username}`}
                 alt={user.username}
                 style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }}
               />
@@ -171,9 +171,9 @@ export const LinkFeed: React.FC<LinkFeedProps> = ({
                       <X size={14} />
                     </button>
                     {mediaType === 'video' ? (
-                      <video src={`http://localhost:5000${mediaUrl}`} style={{ width: '100%', display: 'block' }} />
+                      <video src={mediaUrl} style={{ width: '100%', display: 'block' }} />
                     ) : (
-                      <img src={`http://localhost:5000${mediaUrl}`} alt="Composer Attachment" style={{ width: '100%', display: 'block' }} />
+                      <img src={mediaUrl} alt="Composer Attachment" style={{ width: '100%', display: 'block' }} />
                     )}
                   </div>
                 )}
